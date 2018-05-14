@@ -1,0 +1,42 @@
+<!--The content below is only a placeholder and can be replaced.
+
+<div style="text-align:center">
+  <calc></calc>    
+</div>
+
+
+
+<div style="text-align:center">
+  <h1>
+    {{ title }}!
+  </h1>  
+</div>
+
+<app-inventions-hub></app-inventions-hub>
+
+-->
+
+<div *ngIf="this.showName" class="box">Name: Mark</div>
+<div *ngIf="!this.showName" class="box">Address: Atlanta</div>
+<button (click)="this.toggle()"> Toggle </button>
+<br><br>
+
+<div *ngFor="let name of names; let i = index;">
+	<div>{{i}}:&nbsp;{{name}}</div>
+</div>
+<br><br>
+
+<select [(ngModel)]="selection">
+	<option *ngFor="let option of options"> {{option}} </option>
+</select>
+<div [ngSwitch]="selection">
+	<div class="block1" *ngSwitchCase="options[0]">name</div>
+	<div class="block2" *ngSwitchCase="options[1]">address</div>
+	<div class="block2" *ngSwitchDefault>other</div>
+</div>
+<br><br>
+
+<div *ngFor="let animal of animals">
+	<div [ngClass]="{'selected': animal === selectedAnimal, 'unselected': animal !== selectedAnimal}"
+	(click)="onAnimalClicked($event)"> {{animal}}</div> 
+</div>
