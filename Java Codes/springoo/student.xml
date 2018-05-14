@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<context:annotation-config></context:annotation-config>
+	
+	<bean id="profile" class="com.niit.spring.Profile1"></bean>
+	<bean id="student1" class="com.niit.spring.Student1">
+		<property name="name" value="Hayate" />
+		<property name="age" value="23" />
+	</bean>
+	<bean id="student2" class="com.niit.spring.Student1">
+		<property name="name" value="Meheru" />
+		<property name="age" value="21" />
+	</bean>
+	
+	<bean id="cashPaymentBean" class="com.niit.spring.cashPayment"/>
+		<bean id="payServiceBean" class="com.niit.spring.PayServiceImpl"/>
+		<property name="payment" value="cashPaymentBean" />
+	</bean>
+</beans>

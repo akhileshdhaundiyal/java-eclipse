@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<context:annotation-config></context:annotation-config>
+	
+	<bean id="Library" class="com.niit.spring.Library">
+		<property name="bookList">
+		<list>
+			<ref bean = "book1"/>
+			<ref bean = "book1"/>
+		</list>
+		</property>
+		<property name="stringList">
+			<list>
+				<value>welcome</value>
+				<value>To</value>
+				<value>Library</value>
+			</list>
+		</property>
+	
+	</bean>
+	<bean id="book1" class="com.niit.spring.Book">
+		<property name="title" value="Lehsun" />
+		<property name="author" value="Aalo" />
+		<property name="publications" value="Pyaaz" />
+	</bean>
+	
+	<bean id="book2" class="com.niit.spring.Book">
+		<property name="title" value="Shaljam" />
+		<property name="author" value="Mooli" />
+		<property name="publications" value="Gajar" />
+	</bean>
+</beans>
